@@ -32,6 +32,7 @@ E
 ```
 
 * Some basic operation on vectors.
+
 ```r
 ### Name a vector
 gdp <- c(2.7, 14.7, 3.8, 5.1, 20.9)
@@ -102,6 +103,7 @@ S1[which(is.na(match(S1, S2)))]
 ```
 
 * A vector can contain missing values.
+
 ```r
 x <- c(4, 7, NA, 9, NA, 32)
 
@@ -126,6 +128,7 @@ length(which(is.na(x)))
 ```
 
 * Now let's try something more challenging: impute the missing values in x with the average of its non-missing values.
+
 ```r
 x[which(is.na(x))] <- mean(x[which(!is.na(x))])
 x
@@ -157,15 +160,16 @@ a*b  # Entry-wise product
 a%*%b # Dot product of two vectors[*]
      [,1]
 [1,]  130
-
-
 ```
+
 [*] [Dot product](https://en.wikipedia.org/wiki/Dot_product) of two K-length vectors is defined to be 
 $$ a.b =\sum_{k=1}^K a_k b_k,$$
-where $$a=(a_1, \cdots, a_K)' \mbox{ and }  b=(b_1, \cdots, b_K)'.$$ 
+where 
+$$a=(a_1, \cdots, a_K)' \mbox{ and }  b=(b_1, \cdots, b_K)'.$$ 
 
 
 * Random vectors
+
 ```r
 v20 <- rnorm(20, mean=2, sd=1)
 mean(v20)
@@ -189,6 +193,7 @@ sd(v20000)
 
 
 * Vector of plots. Now let's plot out the histograms of these random vectors in a `vector of plots`! Please remember those vectors are generated from a normal distribution with `mean=2` and `standard deviation=1`. 
+
 ```r
 par(mfrow = c(1, 3)) # Create a 1 x 3 plotting vector
 # The three histograms created will be plotted next to each other
@@ -221,6 +226,7 @@ I guess you are already familiar with the concept of a matirx. However, there ar
 	
 
 * Define and assign values to a matrix.
+
 ```r
 X <- matrix(c(1, 0, 0, 0, 1, 0, 0, 0, 1), nrow = 3)
 X
@@ -255,6 +261,7 @@ X1
 ```
 
 * Naming the rows and columns of matrices.
+
 ```r
 ### We generating a matrix mimicing expression levels for 4 genes and 5 cells 
 expMat <- matrix(c(0,1,0,3,0,0,0,0,2,0,1,0,0,0,1,5,0,4,5,0), nrow=5)
@@ -278,6 +285,7 @@ muscle cell   0    0   1    0
 ```
 
 * Submatrix, matrix transpose, determinant of a squared matrix.
+
 ```r
 X1
      [,1] [,2] [,3] [,4]
@@ -313,6 +321,7 @@ det(X)
 
 
 * Identify missing values in a matrix.
+
 ```r
 X <- matrix(c(3.1, NA, 2.5, -1.8, NA, 0.77, -3.0, NA), nrow=4)
 X
@@ -330,6 +339,7 @@ which(is.na(X), arr.ind=TRUE) # return positions of three 'NA's
 ```
 
 * Calculations on rows or columns of matrices.
+
 ```r
 X <- matrix(c(1:12), nrow=3)
 X 
@@ -418,6 +428,7 @@ image(DM500000.kde)
 contour(DM500000.kde, add = TRUE)   
 title(main = "n=500000", font.main = 4)  
 ``` 
+
 ![Histgrams](Wk2_heatmap.png)
 
 **Further convinced about the [Central Limit Theorem](https://en.wikipedia.org/wiki/Central_limit_theorem)?**
@@ -485,4 +496,6 @@ apply(Arr, 2, max)
 apply(Arr, 3, max)
 [1] 12 24
 ```
+
 Might need some thinking to clear this out...
+
