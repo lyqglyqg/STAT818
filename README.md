@@ -4,15 +4,15 @@
 ## Week 2 HW: 
 Please play with the syntaxes provided and any other R syntaxes you would like to try out. Getting farmiliar with those syntaxes is important for doing your projects in this course. Use `help()` function or look up the function in CRAN manual, if you are not clear how the function works.
 
-**`For your Week 2 HW grading, please submit some evidence of your syntax practice. You can upload screenshots of your R outputs onto` [Canvas](https://canvashelp.ku.edu/).** If you have any questions, please post your questions on Wk2 discussion board on [Canvas](https://canvashelp.ku.edu/).
+**`For your Week 2 HW grading, please submit some evidence of your syntax practice. You can upload screenshots of your R outputs onto [Canvas](https://canvashelp.ku.edu/).`** If you have any questions, please post your questions on Wk2 discussion board on [Canvas](https://canvashelp.ku.edu/).
 
 ## Vectors
 In *R*, vectors are the most commonly used objects to store data for statistical modeling and analysis. For example, in a data frame (which we will talk about next week), each column vector usually represents values of a variable cross individual samples, while each row vector represents values for all variables for that sample.
 
 * Entries of a vector can be integers, decimals, characteristics, logical, strings, etc.
 
-```
-{
+```r
+
 A <- 1:20
 B <- c(1.46, -0.003, 1.2e-4)
 C <- c("Italy", "Egypt", "Mexico")
@@ -30,7 +30,7 @@ D
 [13]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
 E
 [1] "STAT818" "STAT818" "STAT818" "STAT818" "STAT818"
-}
+
 ```
 
 
@@ -38,6 +38,7 @@ E
 
 
 ```r
+
 ### Name a vector
 gdp <- c(2.7, 14.7, 3.8, 5.1, 20.9)
 names(gdp) <- c("India", "China",  "Germany", "Japan", "United States")
@@ -104,6 +105,7 @@ S1[which(!is.na(match(S1, S2)))]
 
 S1[which(is.na(match(S1, S2)))]
 [1] "A" "B" "D"    # Same as setdiff(S1, S2).
+
 ```
 
 * A vector can contain missing values.
