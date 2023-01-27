@@ -175,11 +175,15 @@ a%*%b # Dot product of two vectors[*]
 
 [*] [Dot product](https://en.wikipedia.org/wiki/Dot_product) of two K-length vectors is defined to be 
 
-$$ a . b =\sum_{k=1}^K {a_k b_k},$$
+$$ 
+a . b =\sum_{k=1}^K {a_k b_k},
+$$
 
 where 
 
-$$ a=(a_1, \cdots, a_K)' \mbox{ and }  b=(b_1, \cdots, b_K)'.$$
+$$
+a=(a_1, \cdots, a_K)' \mbox{ and }  b=(b_1, \cdots, b_K)'.
+$$
 
 
 * Random vectors
