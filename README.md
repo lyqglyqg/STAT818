@@ -175,7 +175,7 @@ a%*%b # Dot product of two vectors[*]
 
 [*] [Dot product](https://en.wikipedia.org/wiki/Dot_product) of two K-length vectors is defined to be 
 
-$$ a \dot b =\sum_{k=1}^K a_k b_k,$$
+$$ a . b =\sum_{k=1}^K a_k b_k,$$
 
 where 
 
