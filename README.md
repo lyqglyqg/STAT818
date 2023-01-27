@@ -11,7 +11,8 @@ In *R*, vectors are the most commonly used objects to store data for statistical
 
 * Entries of a vector can be integers, decimals, characteristics, logical, strings, etc.
 
-```r
+```
+{
 A <- 1:20
 B <- c(1.46, -0.003, 1.2e-4)
 C <- c("Italy", "Egypt", "Mexico")
@@ -29,6 +30,7 @@ D
 [13]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
 E
 [1] "STAT818" "STAT818" "STAT818" "STAT818" "STAT818"
+}
 ```
 
 
