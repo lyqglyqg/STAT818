@@ -1,4 +1,4 @@
-# STAT818 Week 2 -- R Objects I: Vector, Matrix, and Array
+# Week 2 -- R Objects I: Vector, Matrix, and Array
 
 <!--more-->
 ## Week 2 HW: 
