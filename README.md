@@ -111,6 +111,7 @@ S1[which(is.na(match(S1, S2)))]
 * A vector can contain missing values.
 
 ```r
+
 x <- c(4, 7, NA, 9, NA, 32)
 
 ### Find out if each entry of x is a missing value or not
@@ -139,11 +140,14 @@ length(which(is.na(x)))
 x[which(is.na(x))] <- mean(x[which(!is.na(x))])
 x
 [1]  4  7 13  9 13 32   # Notice 13 is the averge of 4, 7, 9, 32.
+
 ```
 
 
 * Vector arithmetics.
+
 ```r
+
 a <- c(1,2,3,4,5)
 b <- c(6,7,8,9,10)
 
@@ -166,17 +170,22 @@ a*b  # Entry-wise product
 a%*%b # Dot product of two vectors[*]
      [,1]
 [1,]  130
+
 ```
 
 [*] [Dot product](https://en.wikipedia.org/wiki/Dot_product) of two K-length vectors is defined to be 
-$$ a.b =\sum_{k=1}^K a_k b_k,$$
+
+$$ a \dot b =\sum_{k=1}^K a_k b_k,$$
+
 where 
+
 $$a=(a_1, \cdots, a_K)' \mbox{ and }  b=(b_1, \cdots, b_K)'.$$ 
 
 
 * Random vectors
 
 ```r
+
 v20 <- rnorm(20, mean=2, sd=1)
 mean(v20)
   [1] 1.854119
@@ -194,13 +203,16 @@ mean(v20000)
   [1] 2.001766
 sd(v20000)
   [1] 0.9996004
+  
 ```
+
 **Have you been convinced of the [Law of Large Numbers](https://en.wikipedia.org/wiki/Law_of_large_numbers)?**
 
 
 * Vector of plots. Now let's plot out the histograms of these random vectors in a `vector of plots`! Please remember those vectors are generated from a normal distribution with `mean=2` and `standard deviation=1`. 
 
 ```r
+
 par(mfrow = c(1, 3)) # Create a 1 x 3 plotting vector
 # The three histograms created will be plotted next to each other
 
@@ -214,7 +226,8 @@ lines(density(v200), col = "red")
 
 # Histogram 3
 hist(v20000, prob=TRUE)
-lines(density(v20000), col = "red")      
+lines(density(v20000), col = "red")   
+
 ```
  
 ![Histgrams](Wk2hist.png)
@@ -234,6 +247,7 @@ I guess you are already familiar with the concept of a matirx. However, there ar
 * Define and assign values to a matrix.
 
 ```r
+
 X <- matrix(c(1, 0, 0, 0, 1, 0, 0, 0, 1), nrow = 3)
 X
        [,1] [,2] [,3]
@@ -264,11 +278,13 @@ X1
 [3,]    9   10   11   12
 
 # Option "byrow=TRUE" makes the stacking rowwise.
+
 ```
 
 * Naming the rows and columns of matrices.
 
 ```r
+
 ### We generating a matrix mimicing expression levels for 4 genes and 5 cells 
 expMat <- matrix(c(0,1,0,3,0,0,0,0,2,0,1,0,0,0,1,5,0,4,5,0), nrow=5)
 expMat 
@@ -288,11 +304,13 @@ T Cell        1    0   0    0
 B Cell        0    0   0    4
 stem cell     3    2   0    5
 muscle cell   0    0   1    0
+
 ```
 
 * Submatrix, matrix transpose, determinant of a squared matrix.
 
 ```r
+
 X1
      [,1] [,2] [,3] [,4]
 [1,]    1    2    3    4
@@ -323,12 +341,14 @@ X
 
 det(X)
 [1] 0.782603
+
 ```
 
 
 * Identify missing values in a matrix.
 
 ```r
+
 X <- matrix(c(3.1, NA, 2.5, -1.8, NA, 0.77, -3.0, NA), nrow=4)
 X
      [,1]  [,2]
@@ -342,11 +362,13 @@ which(is.na(X), arr.ind=TRUE) # return positions of three 'NA's
 [1,]   2   1
 [2,]   1   2
 [3,]   4   2
+
 ```
 
 * Calculations on rows or columns of matrices.
 
 ```r
+
 X <- matrix(c(1:12), nrow=3)
 X 
      [,1] [,2] [,3] [,4]
@@ -359,11 +381,13 @@ apply(X, 1, max) # The second argument = 1 lets the apply function act on each r
 
 apply(X, 2, max) # The second argument = 2 lets the apply function act on each column of X matrix 
 [1]  3  6  9 12
+
 ```
 
 * Last, let's revisit the multi-dimentional [Central Limit Theorem](https://en.wikipedia.org/wiki/Central_limit_theorem) by generating bivariate normal data matrices and visualising the empirical distribution using heapmaps.
 
 ```r
+
 library(MASS) 
 
 mu <- c(0,0)                         # Mean
@@ -433,6 +457,7 @@ DM500000.kde <- kde2d(DM500000[,1], DM500000[,2], n = 50)
 image(DM500000.kde)      
 contour(DM500000.kde, add = TRUE)   
 title(main = "n=500000", font.main = 4)  
+
 ``` 
 
 ![Histgrams](Wk2_heatmap.png)
@@ -447,6 +472,7 @@ An array is a multi-dimensional object where all the entries have the same class
 
 
 ```r
+
 Arr <- array(c(1:24), dim=c(4,3,2))
 Arr
 , , 1
@@ -464,12 +490,16 @@ Arr
 [2,]   14   18   22
 [3,]   15   19   23
 [4,]   16   20   24
+
 ```
+
 Each entry of an 3D array is a matrix.
 
 
 * 2D projection matrix of a 3D array.
+
 ```r
+
 Arr[,,1]
      [,1] [,2] [,3]
 [1,]    1    5    9
@@ -489,10 +519,13 @@ Arr[3,,]
 [1,]    3   15
 [2,]    7   19
 [3,]   11   23
+
 ```
 
 * Apply function to a 3D array.
+
 ```r
+
 apply(Arr, 1, max)
 [1] 21 22 23 24
 
@@ -501,6 +534,7 @@ apply(Arr, 2, max)
 
 apply(Arr, 3, max)
 [1] 12 24
+
 ```
 
 Might need some thinking to clear this out...
