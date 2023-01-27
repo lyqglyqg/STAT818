@@ -31,7 +31,9 @@ E
 [1] "STAT818" "STAT818" "STAT818" "STAT818" "STAT818"
 ```
 
+
 * Some basic operation on vectors.
+
 
 ```r
 ### Name a vector
