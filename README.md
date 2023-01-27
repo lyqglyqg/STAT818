@@ -10,6 +10,7 @@ Please play with the syntaxes provided and any other R syntaxes you would like t
 In *R*, vectors are the most commonly used objects to store data for statistical modeling and analysis. For example, in a data frame (which we will talk about next week), each column vector usually represents values of a variable cross individual samples, while each row vector represents values for all variables for that sample.
 
 * Entries of a vector can be integers, decimals, characteristics, logical, strings, etc.
+
 ```r
 A <- 1:20
 B <- c(1.46, -0.003, 1.2e-4)
